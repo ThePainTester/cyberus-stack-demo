@@ -29,6 +29,8 @@ const StackDemo = () => {
 
   const pop = () => {
     if (stack.length === 0) return;
+    const poppedItem = stack[stack.length - 1];
+    setRegister(poppedItem.value); // Put popped value into register
     setStack(prev => prev.slice(0, -1));
   };
 
@@ -257,7 +259,7 @@ const StackDemo = () => {
                   <li>• Decrements RSP by 8 bytes (64-bit)</li>
                   <li>• Stores value at new RSP location</li>
                   <li>• Stack grows toward lower addresses</li>
-                  <li>• Assembly: <code className="bg-muted px-1 rounded">push %rax</code></li>
+                  <li>• Assembly: <code className="bg-muted px-1 rounded">push rax</code></li>
                 </ul>
               </div>
               <div className="space-y-3">
@@ -266,7 +268,7 @@ const StackDemo = () => {
                   <li>• Reads value from current RSP location</li>
                   <li>• Increments RSP by 8 bytes</li>
                   <li>• Stack shrinks toward higher addresses</li>
-                  <li>• Assembly: <code className="bg-muted px-1 rounded">pop %rax</code></li>
+                  <li>• Assembly: <code className="bg-muted px-1 rounded">pop rax</code></li>
                 </ul>
               </div>
               <div className="space-y-3">
