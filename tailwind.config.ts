@@ -61,7 +61,22 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				stack: {
+					item: 'hsl(var(--stack-item))',
+					'item-foreground': 'hsl(var(--stack-item-foreground))',
+					container: 'hsl(var(--stack-container))',
+					'container-border': 'hsl(var(--stack-container-border))',
+					accent: 'hsl(var(--stack-accent))',
+					'accent-foreground': 'hsl(var(--stack-accent-foreground))'
 				}
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-accent': 'var(--gradient-accent)'
+			},
+			transitionProperty: {
+				'smooth': 'var(--transition-smooth)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
