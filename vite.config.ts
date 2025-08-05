@@ -19,5 +19,5 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: "/cyberus-stack-demo",
+  base: "/cyberus-stack-demo/",
 }));
