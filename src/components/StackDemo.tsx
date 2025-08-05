@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowDown, ArrowUp, Trash2, ChevronRight } from 'lucide-react';
+import crLogo from '@/assets/cr-logo.png';
 
 interface StackItem {
   id: number;
@@ -53,12 +54,17 @@ const StackDemo = () => {
     <div className="min-h-screen bg-background p-6">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
-            x86-64 Stack Operations Demo
-          </h1>
-          <p className="text-lg text-muted-foreground">
-            Learn how the CPU stack works in RAM with RSP and RBP registers
-          </p>
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <img src={crLogo} alt="CR Logo" className="h-16 w-16" />
+            <div>
+              <h1 className="text-4xl font-bold mb-2 bg-gradient-primary bg-clip-text text-transparent">
+                x86-64 Stack Operations Demo
+              </h1>
+              <p className="text-lg text-muted-foreground">
+                Learn how the CPU stack works in RAM with RSP and RBP registers
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-6">
@@ -220,19 +226,21 @@ const StackDemo = () => {
                       </div>
                     ) : (
                       stack.map((_, index) => (
-                        <div key={index} className="h-12 flex items-center">
-                          {index === 0 && (
-                            <div className="flex items-center gap-1 text-primary font-mono text-sm mr-2">
-                              <ChevronRight className="h-4 w-4" />
-                              RBP
-                            </div>
-                          )}
-                          {index === stack.length - 1 && (
-                            <div className="flex items-center gap-1 text-stack-accent font-mono text-sm animate-pointer-blink">
-                              <ChevronRight className="h-4 w-4" />
-                              RSP
-                            </div>
-                          )}
+                        <div key={index} className="h-12 flex items-center justify-start">
+                          <div className="flex items-center gap-1 font-mono text-sm">
+                            {index === 0 && (
+                              <div className="flex items-center gap-1 text-primary">
+                                <ChevronRight className="h-4 w-4" />
+                                RBP
+                              </div>
+                            )}
+                            {index === stack.length - 1 && (
+                              <div className="flex items-center gap-1 text-stack-accent animate-pointer-blink">
+                                <ChevronRight className="h-4 w-4" />
+                                RSP
+                              </div>
+                            )}
+                          </div>
                         </div>
                       ))
                     )}
