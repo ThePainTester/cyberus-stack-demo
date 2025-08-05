@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowDown, ArrowUp, Trash2, ChevronRight } from 'lucide-react';
-import crLogo from '@/assets/cr-logo.png';
+import cyberusLogo from '@/assets/cyberus-logo.png';
 
 interface StackItem {
   id: number;
@@ -55,7 +55,7 @@ const StackDemo = () => {
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-4 mb-6">
-            <img src={crLogo} alt="CR Logo" className="h-16 w-16" />
+            <img src={cyberusLogo} alt="Cyberus Logo" className="h-16 w-16" />
             <div>
               <h1 className="text-4xl font-bold mb-2 bg-gradient-primary bg-clip-text text-transparent">
                 x86-64 Stack Operations Demo
