@@ -52,11 +52,9 @@ const StackDemo = () => {
 
   return (
     <div className="min-h-screen bg-background p-6">
+      <img src={cyberusLogo} alt="Cyberus Logo" className="h-20" />
       <div className="max-w-5xl mx-auto">
         <div className="mb-8">
-          <div className="flex items-center gap-3 mb-6">
-            <img src={cyberusLogo} alt="Cyberus Logo" className="h-12 w-12" />
-          </div>
           <div className="text-center">
             <h1 className="text-4xl font-bold mb-2 bg-gradient-primary bg-clip-text text-transparent">
               x86-64 Stack Operations Demo
@@ -162,7 +160,7 @@ const StackDemo = () => {
                 <div className="flex">
                   {/* Memory addresses column */}
                   <div className="w-32 text-right pr-4 text-xs font-mono text-muted-foreground">
-                    <div className="h-8 flex items-center justify-end border-r border-stack-container-border">
+                    <div className="h-8 p-2 flex items-center justify-end border-r border-stack-container-border">
                       Address
                     </div>
                     {stack.length === 0 ? (
