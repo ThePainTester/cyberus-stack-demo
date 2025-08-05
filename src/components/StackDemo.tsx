@@ -51,21 +51,21 @@ const StackDemo = () => {
   const getAddress = (index: number) => baseAddress - (index * 8); // 8 bytes per stack slot
 
   return (
-    <div className="min-h-screen bg-background p-6">
-      <img src={cyberusLogo} alt="Cyberus Logo" className="h-20" />
+    <div className="min-h-screen bg-background p-3 sm:p-6">
+      <img src={cyberusLogo} alt="Cyberus Logo" className="h-16 sm:h-20" />
       <div className="max-w-5xl mx-auto">
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <div className="text-center">
-            <h1 className="text-4xl font-bold mb-2 bg-gradient-primary bg-clip-text text-transparent">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 bg-gradient-primary bg-clip-text text-transparent">
               x86-64 Stack Operations Demo
             </h1>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-base sm:text-lg text-muted-foreground px-4">
               Learn how the CPU stack works in RAM with RSP and RBP registers
             </p>
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
           {/* Controls */}
           <Card className="border-2">
             <CardHeader>
@@ -156,12 +156,13 @@ const StackDemo = () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="bg-stack-container border-2 border-stack-container-border rounded-lg p-4 min-h-[500px]">
+              <div className="bg-stack-container border-2 border-stack-container-border rounded-lg p-2 sm:p-4 min-h-[400px] sm:min-h-[500px]">
                 <div className="flex">
                   {/* Memory addresses column */}
-                  <div className="w-32 text-right pr-4 text-xs font-mono text-muted-foreground">
-                    <div className="h-8 p-2 flex items-center justify-end border-r border-stack-container-border">
-                      Address
+                  <div className="w-20 sm:w-32 text-right pr-2 sm:pr-4 text-xs font-mono text-muted-foreground">
+                    <div className="h-8 p-1 sm:p-2 flex items-center justify-end border-r border-stack-container-border">
+                      <span className="hidden sm:inline">Address</span>
+                      <span className="sm:hidden">Addr</span>
                     </div>
                     {stack.length === 0 ? (
                       <div className="h-[60px] flex items-center justify-end">
@@ -178,27 +179,27 @@ const StackDemo = () => {
 
                   {/* Stack content */}
                   <div className="flex-1">
-                    <div className="h-8 flex items-center px-4 text-sm font-semibold border-b border-stack-container-border">
+                    <div className="h-8 flex items-center px-2 sm:px-4 text-sm font-semibold border-b border-stack-container-border">
                       Stack Memory
                     </div>
                     
                     {stack.length === 0 ? (
-                      <div className="text-center text-muted-foreground py-20">
-                        <div className="text-6xl mb-4">📍</div>
-                        <p className="text-lg font-medium">Stack is empty</p>
-                        <p className="text-sm">Push values to see them grow downward</p>
+                      <div className="text-center text-muted-foreground py-12 sm:py-20">
+                        <div className="text-4xl sm:text-6xl mb-4">📍</div>
+                        <p className="text-base sm:text-lg font-medium">Stack is empty</p>
+                        <p className="text-xs sm:text-sm px-2">Push values to see them grow downward</p>
                       </div>
                     ) : (
                       stack.map((item, index) => (
                         <div
                           key={item.id}
-                          className="relative bg-stack-item text-stack-item-foreground px-4 py-3 rounded-lg shadow-md font-mono text-lg border-2 border-stack-item animate-stack-push mb-2 h-[52px] flex items-center"
+                          className="relative bg-stack-item text-stack-item-foreground px-2 sm:px-4 py-3 rounded-lg shadow-md font-mono text-sm sm:text-lg border-2 border-stack-item animate-stack-push mb-2 h-[52px] flex items-center"
                         >
                           <div className="flex justify-between items-center w-full">
-                            <span className="font-semibold">{item.value}</span>
-                            <div className="text-xs">
+                            <span className="font-semibold truncate">{item.value}</span>
+                            <div className="text-xs ml-2">
                               {index === 0 && (
-                                <span className="bg-primary text-primary-foreground px-2 py-1 rounded-full">
+                                <span className="bg-primary text-primary-foreground px-1 sm:px-2 py-1 rounded-full text-xs">
                                   BASE
                                 </span>
                               )}
@@ -210,9 +211,10 @@ const StackDemo = () => {
                   </div>
 
                   {/* Pointer indicators */}
-                  <div className="w-24 pl-4">
-                    <div className="h-8 flex items-center text-sm font-semibold">
-                      Pointers
+                  <div className="w-16 sm:w-24 pl-2 sm:pl-4">
+                    <div className="h-8 flex items-center text-xs sm:text-sm font-semibold">
+                      <span className="hidden sm:inline">Pointers</span>
+                      <span className="sm:hidden">Ptr</span>
                     </div>
                     
                     {stack.length === 0 ? (
@@ -258,7 +260,7 @@ const StackDemo = () => {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               <div className="space-y-3">
                 <h4 className="font-semibold text-primary">PUSH Operation</h4>
                 <ul className="text-sm space-y-2 text-muted-foreground">
@@ -277,7 +279,7 @@ const StackDemo = () => {
                   <li>• Assembly: <code className="bg-muted px-1 rounded">pop rax</code></li>
                 </ul>
               </div>
-              <div className="space-y-3">
+              <div className="space-y-3 sm:col-span-2 lg:col-span-1">
                 <h4 className="font-semibold text-stack-accent">Stack Registers</h4>
                 <ul className="text-sm space-y-2 text-muted-foreground">
                   <li>• <strong>RSP</strong>: Stack pointer (top of stack)</li>
