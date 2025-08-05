@@ -1,73 +1,91 @@
-# Welcome to your Lovable project
+# Cyberus Memory Stack Demo
 
-## Project info
+![Cyberus Logo](/src/assets/Cyberus-logo.png)  
+*An interactive demonstration of memory stack operations*
 
-**URL**: https://lovable.dev/projects/ff31a7ba-6a29-4fed-a1dd-d74038ba43c7
+## Project Overview
 
-## How can I edit this code?
+This project is an educational web application developed for Cyberus, a university club focused on computer science and programming education. The application provides an interactive visualization of how memory stacks work in computer systems.
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- **Interactive Stack Visualization**: Watch the stack grow and shrink in real-time
+- **Step-by-Step Execution**: Understand each operation with controlled execution
+- **Visual Feedback**: Color-coded elements for better comprehension
+- **Common Operations**: Supports push, and pop operations
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ff31a7ba-6a29-4fed-a1dd-d74038ba43c7) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js
+- npm or Yarn
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ThePainTester/cyberus-stack-demo.git
+   cd cyberus-stack-demo
+   ```
 
-Follow these steps:
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+3. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+4. Open your browser and navigate to `http://localhost:8080`
 
-# Step 3: Install the necessary dependencies.
-npm i
+## How to Use
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+1. **Push Operation**: Add a new value to the top of the stack
+2. **Pop Operation**: Remove the top value from the stack
+3. **Peek Operation**: View the top value without removing it
+4. **Step Through**: Use the step controls to execute operations one at a time
+5. **Reset**: Clear the stack and start over
+
+## Project Structure
+
+```
+cyberus-stack-demo/
+├── src/
+│   ├── components/     # React components
+│   ├── styles/        # CSS/SCSS files
+│   ├── utils/         # Utility functions
+│   └── App.tsx        # Main application component
+├── public/            # Static files
+└── README.md          # This file
 ```
 
-**Edit a file directly in GitHub**
+## Contributing
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+We welcome contributions from the community! If you'd like to contribute to this project:
 
-**Use GitHub Codespaces**
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Acknowledgments
+
+- Developed for Cyberus University Club
+- Built with React, TypeScript, and Vite
 
 ## What technologies are used for this project?
 
 This project is built with:
-
 - Vite
 - TypeScript
 - React
 - shadcn-ui
 - Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/ff31a7ba-6a29-4fed-a1dd-d74038ba43c7) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
