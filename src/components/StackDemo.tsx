@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowDown, ArrowUp, Trash2, ChevronRight } from 'lucide-react';
-import cyberusLogo from '@/assets/cyberus-logo.png';
+import cyberusLogo from '@/assets/Cyberus-logo.png';
 
 interface StackItem {
   id: number;
