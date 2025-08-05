@@ -53,17 +53,17 @@ const StackDemo = () => {
   return (
     <div className="min-h-screen bg-background p-6">
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-8">
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <img src={cyberusLogo} alt="Cyberus Logo" className="h-16 w-16" />
-            <div>
-              <h1 className="text-4xl font-bold mb-2 bg-gradient-primary bg-clip-text text-transparent">
-                x86-64 Stack Operations Demo
-              </h1>
-              <p className="text-lg text-muted-foreground">
-                Learn how the CPU stack works in RAM with RSP and RBP registers
-              </p>
-            </div>
+        <div className="mb-8">
+          <div className="flex items-center gap-3 mb-6">
+            <img src={cyberusLogo} alt="Cyberus Logo" className="h-12 w-12" />
+          </div>
+          <div className="text-center">
+            <h1 className="text-4xl font-bold mb-2 bg-gradient-primary bg-clip-text text-transparent">
+              x86-64 Stack Operations Demo
+            </h1>
+            <p className="text-lg text-muted-foreground">
+              Learn how the CPU stack works in RAM with RSP and RBP registers
+            </p>
           </div>
         </div>
 
@@ -161,17 +161,17 @@ const StackDemo = () => {
               <div className="bg-stack-container border-2 border-stack-container-border rounded-lg p-4 min-h-[500px]">
                 <div className="flex">
                   {/* Memory addresses column */}
-                  <div className="w-32 text-right pr-4 space-y-2 text-xs font-mono text-muted-foreground">
+                  <div className="w-32 text-right pr-4 text-xs font-mono text-muted-foreground">
                     <div className="h-8 flex items-center justify-end border-r border-stack-container-border">
                       Address
                     </div>
                     {stack.length === 0 ? (
-                      <div className="h-12 flex items-center justify-end">
+                      <div className="h-[60px] flex items-center justify-end">
                         0x{baseAddress.toString(16)}
                       </div>
                     ) : (
                       stack.map((_, index) => (
-                        <div key={index} className="h-12 flex items-center justify-end">
+                        <div key={index} className="h-[60px] flex items-center justify-end">
                           0x{getAddress(index).toString(16)}
                         </div>
                       ))
@@ -179,7 +179,7 @@ const StackDemo = () => {
                   </div>
 
                   {/* Stack content */}
-                  <div className="flex-1 space-y-2">
+                  <div className="flex-1">
                     <div className="h-8 flex items-center px-4 text-sm font-semibold border-b border-stack-container-border">
                       Stack Memory
                     </div>
@@ -194,9 +194,9 @@ const StackDemo = () => {
                       stack.map((item, index) => (
                         <div
                           key={item.id}
-                          className="relative bg-stack-item text-stack-item-foreground px-4 py-3 rounded-lg shadow-md font-mono text-lg border-2 border-stack-item animate-stack-push"
+                          className="relative bg-stack-item text-stack-item-foreground px-4 py-3 rounded-lg shadow-md font-mono text-lg border-2 border-stack-item animate-stack-push mb-2 h-[52px] flex items-center"
                         >
-                          <div className="flex justify-between items-center">
+                          <div className="flex justify-between items-center w-full">
                             <span className="font-semibold">{item.value}</span>
                             <div className="text-xs">
                               {index === 0 && (
@@ -212,13 +212,13 @@ const StackDemo = () => {
                   </div>
 
                   {/* Pointer indicators */}
-                  <div className="w-24 pl-4 space-y-2">
+                  <div className="w-24 pl-4">
                     <div className="h-8 flex items-center text-sm font-semibold">
                       Pointers
                     </div>
                     
                     {stack.length === 0 ? (
-                      <div className="h-12 flex items-center">
+                      <div className="h-[60px] flex items-center">
                         <div className="flex items-center gap-1 text-stack-accent font-mono text-sm animate-pointer-blink">
                           <ChevronRight className="h-4 w-4" />
                           RSP
@@ -226,7 +226,7 @@ const StackDemo = () => {
                       </div>
                     ) : (
                       stack.map((_, index) => (
-                        <div key={index} className="h-12 flex items-center justify-start">
+                        <div key={index} className="h-[60px] flex items-center justify-start">
                           <div className="flex items-center gap-1 font-mono text-sm">
                             {index === 0 && (
                               <div className="flex items-center gap-1 text-primary">
